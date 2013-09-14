@@ -15,6 +15,7 @@ Add Item to List:
 ```
 [ListName] Item1, Item2, Item3
 
+Example:
 Target milk, dog food, chips
 ```
 
@@ -22,6 +23,7 @@ Retrive List:
 ```
 List [ListName]
 
+Example:
 List Target
 ```
 
@@ -29,6 +31,7 @@ Clear List:
 ```
 Clear [ListName]
 
+Example:
 Clear Target
 ```
  
