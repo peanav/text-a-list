@@ -44,3 +44,14 @@ http://[your-heroku-app-name].herokuapp.com/sms
 ```
 
 Your Text-A-List app is ready for use!
+
+## Web Client
+There is also a web client that gives a read-only view into the lists.
+
+![web screen shot](/screens/Text-A-List_web.png "web screen shot")
+
+To run the web client locally, run:
+```
+foreman start
+```
+And the visit http://localhost:5000
