@@ -1,6 +1,17 @@
 require 'rake/testtask'
 
+config = <<-eos
+MONGO_URI=
+TWILIO_SID=
+TWILIO_TOKEN=
+TWILIO_NUMBER=
+eos
+
 namespace :heroku do
+  task :create_config do
+    File.open('.env', 'w') { |file| file.write(config) } unless File.exist?('.env')
+  end
+
   task :upload_config do
     vars = []
     File.open(".env", "r").each_line do |line|
