@@ -22,11 +22,13 @@ class App < Sinatra::Base
     if (text.downcase.start_with? 'list ')
       list = text.slice(text.index(' ')..text.length).strip
       items = Queries.items list
-      body = items.count>0 ? items.join(', ') : "The #{list.capitalize} list is empty"
-      SMS.send(
-        :to => params['From'],
-        :body => body
-      )
+      split_messages(items.each) do |message_body|
+        body = message_body.count>0 ? message_body.join(', ') : "The #{list.capitalize} list is empty"
+        SMS.send(
+          :to => params['From'],
+          :body => body
+        )
+      end
       'List Sent'
     elsif (text.downcase.start_with? 'clear ')
       list = text.slice(text.index(' ')..text.length).strip
@@ -45,5 +47,17 @@ class App < Sinatra::Base
     rescue Errno::ENOENT
       status 404
     end
+  end
+end
+
+private 
+
+def split_messages(items)
+  items.reduce([[]]) do |memo, item|
+    current = memo[memo.count-1]
+    current.push item
+
+    memo.push([current.pop]) if current.join(', ').length > 160
+    memo
   end
 end
