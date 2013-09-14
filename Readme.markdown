@@ -6,7 +6,7 @@ A texting application for managing multiple lists
 
 ## Requriments
 - Ruby
-- MongoDB
+- MongoDB You can get a free one @ [MongoLab](http://mongolab.com) or [MongoHQ](http://mongohq.com)
 - Heroku
 - A Twilio Phone Number
 
@@ -29,3 +29,18 @@ After you have entered your settings run this rake task
 ```
 rake heroku:upload_config
 ```
+
+Then deploy to heroku
+```
+heroku create
+git push heroku master
+heroku open
+```
+
+Now, set up Twilio to post to your app instance
+Go to the Manage Numbers page in your Twilio account. <https://www.twilio.com/user/account/phone-numbers/incoming>. Click on the number you want to use and fill in the *Messaging Request URL*
+```
+http://[your-heroku-app-name].herokuapp.com/sms
+```
+
+Now your Text-A-List app is ready for use!
