@@ -4,7 +4,7 @@ A texting application for managing multiple lists
 
 ![mobile screen shot](/screens/Text-A-List_mobile.png "mobile screen shot")
 
-## Requriments
+## Requirements
 - Ruby
 - MongoDB You can get a free one @ [MongoLab](http://mongolab.com) or [MongoHQ](http://mongohq.com)
 - Heroku
@@ -43,4 +43,4 @@ Go to the Manage Numbers page in your Twilio account. <https://www.twilio.com/us
 http://[your-heroku-app-name].herokuapp.com/sms
 ```
 
-Now your Text-A-List app is ready for use!
+Your Text-A-List app is ready for use!
