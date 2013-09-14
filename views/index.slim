@@ -1,0 +1,40 @@
+doctype html
+/!
+  !
+  ______   ____ _____    ____ _____ ___  __
+  \____ \_/ __ \\__  \  /    \\__  \\  \/ /
+  |  |_> >  ___/ / __ \|   |  \/ __ \\   /
+  |   __/ \___  >____  /___|  (____  /\_/
+  |__|
+  !
+
+/ Condidtional IE comment that will put a ie class on the main html element if IE
+/[ if IE ]
+  html.ie
+== '<!--[if !(IE)]><!--> <html class=""> <!--<![endif]-->'
+head
+  title sinatra + angular = crazy awesome
+  meta charset="utf-8"
+  meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  link href="/assets/app.css" rel="stylesheet"
+body ng-app="app"
+  h1
+    |Text-A-List
+    span 801-921-6715
+  .app ng-controller="appCtrl" ng-cloak="yes"
+    #lists
+      h2 Lists
+      ul
+        li ng-class="{selected: current(list)}" ng-click="setList(list)" ng-repeat="list in lists" {{ list }}
+    #items
+      h2 Items
+      ul
+        li ng-repeat="item in items" {{ item }}
+
+
+  script src="/assets/lib/jquery.js"
+  script src="/assets/lib/lodash.js"
+  script src="/assets/lib/angular.js"
+  script src="/assets/app/boot.js"
+  script src="/assets/app/appCtrl.js"
+  script src="/assets/app/listService.js"

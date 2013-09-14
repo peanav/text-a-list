@@ -1,0 +1,76 @@
+@import "pure/base";
+@import "pure/grids";
+@import "pure/buttons";
+@import "pure/menus";
+
+body {
+  margin: 0;
+  color: #333;
+  font: 18px/1.6 "HelveticaNeue-Light","Helvetica Neue",Helvetica, arial, sans-serif;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+h1 {
+  background: #488abe;
+  padding: 0 30px;
+  margin: 0;
+  font-weight: normal;
+  line-height: 90px;
+  color: #fff;
+
+  span {
+    position: absolute;
+    right: 30px;
+    line-height: 90px;
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+h2 {
+  font-weight: normal;
+  margin: 20px 30px;
+  padding-bottom: 5px;
+  border-bottom: solid 1px rgba(0,0,0,0.2);
+}
+
+#lists, #items {
+  position: absolute;
+  top: 90px;
+  bottom: 0;
+  width: 50%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 20px 15px;
+  margin: 0 15px;
+}
+
+#lists li {
+  cursor: pointer;
+}
+
+#lists li.selected {
+  background: #6caedb;
+  color: #fff;
+}
+
+#lists {
+  left: 0;
+  background: #eee;
+}
+
+#items {
+  right: 0;
+}
+
