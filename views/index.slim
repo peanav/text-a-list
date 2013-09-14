@@ -25,11 +25,11 @@ body ng-app="app"
     #lists
       h2 Lists
       ul
-        li ng-class="{selected: current(list)}" ng-click="setList(list)" ng-repeat="list in lists" {{ list }}
+        li ng-class="{selected: current(list)}" ng-click="setList(list)" ng-repeat="list in lists track by $index" {{ list }}
     #items
       h2 Items
       ul
-        li ng-repeat="item in items" {{ item }}
+        li ng-repeat="item in items track by $index" {{ item }}
 
 
   script src="/assets/lib/jquery.js"
