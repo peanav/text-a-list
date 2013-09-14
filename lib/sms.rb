@@ -4,8 +4,6 @@ class SMS
   end
 
   def self.send(opts)
-    p opts
-    p @client
     @client.account.sms.messages.create(
       :from => ENV['TWILIO_NUMBER'],
       :to => opts[:to],

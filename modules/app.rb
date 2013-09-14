@@ -22,7 +22,7 @@ class App < Sinatra::Base
     if (text.downcase.start_with? 'list ')
       list = text.slice(text.index(' ')..text.length).strip
       items = Queries.items list
-      split_messages(items.each) do |message_body|
+      split_messages(items.each).each do |message_body|
         body = message_body.count>0 ? message_body.join(', ') : "The #{list.capitalize} list is empty"
         SMS.send(
           :to => params['From'],
