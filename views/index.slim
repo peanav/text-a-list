@@ -20,7 +20,7 @@ head
 body ng-app="app"
   h1
     |Text-A-List
-    span 801-921-6715
+    span= ENV['TWILIO_NUMBER']
   .app ng-controller="appCtrl" ng-cloak="yes"
     #lists
       h2 Lists
