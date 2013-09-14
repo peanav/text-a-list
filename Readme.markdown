@@ -10,6 +10,29 @@ A texting application for managing multiple lists
 - Heroku
 - A Twilio Phone Number
 
+## How to Use
+Add Item to List:
+```
+[ListName] Item1, Item2, Item3
+
+Target milk, dog food, chips
+```
+
+Retrive List:
+```
+List [ListName]
+
+List Target
+```
+
+Clear List:
+```
+Clear [ListName]
+
+Clear Target
+```
+ 
+
 ## Getting Started
 
 Start by runnig this rake task
@@ -54,4 +77,4 @@ To run the web client locally, run:
 ```
 foreman start
 ```
-And the visit http://localhost:5000
+And then visit http://localhost:5000
